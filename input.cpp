@@ -3,10 +3,10 @@
 #include "header.h"
 
 void Input(const int ARRAY_SIZE, string namesAr[],
-		   int idAr[], float balanceAr[], string fileName)
+		   int idAr[], float balanceAr[], string inFile)
 {
 	ifstream fin;
-	fin.open(fileName.c_str());
+	fin.open(inFile.c_str());
 
 	for(int index = 0; index < ARRAY_SIZE; index++)
 	{
@@ -18,11 +18,7 @@ void Input(const int ARRAY_SIZE, string namesAr[],
 
 		fin.ignore(1000, '\n');
 	}
-
-	for(int index = 0; index < ARRAY_SIZE; index++)
-	{
-		cout << namesAr[index] << endl;
-		cout << idAr[index] << endl;
-		cout << balanceAr[index] << endl << endl;
-	}
+	fin.close();
 }
+
+
